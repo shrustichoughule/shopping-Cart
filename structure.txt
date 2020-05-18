@@ -1,0 +1,183 @@
+Register User
+
+url == localhost:3000/api/userRegister
+
+method == post
+
+body == {
+  "name": "Omkar Thorat",
+    "email": "thoratomkar29@gmail.com",
+    "phone": "9970525069",
+    "password": "123456",
+}
+
+response == {
+    "_id": "5ec0ecddc994c204945e86b1",
+    "name": "Omkar Thorat",
+    "email": "thoratomkar29@gmail.com",
+    "phone": "9970525069",
+    "password": "123456",
+    "products": [],
+    "__v": 0
+}
+
+----------------------------------------------------------------------------------
+
+Get User:
+
+url == localhost:3000/api/userProfile/5ec0ecddc994c204945e86b1
+method == get
+response == {
+    "_id": "5ec0ecddc994c204945e86b1",
+    "name": "Omkar Thorat",
+    "email": "thoratomkar29@gmail.com",
+    "phone": "9970525069",
+    "password": "123456",
+    "products": [],
+    "__v": 0
+}
+
+----------------------------------------------------------------------------------
+
+update User:
+
+url == localhost:3000/api/userUpdate/5ec1de6a85b8301f1022b597
+method == patch
+
+body == {
+"name": "Omkar Thorat S",
+}
+response == {
+    "updated User": {
+        "n": 1,
+        "nModified": 0,
+        "ok": 1
+    }
+}
+
+run get user again to see updated data;
+
+--------------------------------------------------------------------------------------
+
+delete User
+
+url == localhost:3000/api/userDelete/5ec0ecddc994c204945e86b1
+method == delete
+response == {
+    "n": 1,
+    "ok": 1,
+    "deletedCount": 1
+}
+
+run get user again to see deleted data;
+
+------------------------------------------------------------------------------------
+
+Add Product
+
+url == localhost:3000/api/product/addProduct/5ec1de6a85b8301f1022b597
+method == patch
+
+body == {
+
+	  	"name": "Soap",
+            "category": "Bathing",
+            "price": "45"
+}
+
+response == {
+    "n": 1,
+    "nModified": 1,
+    "ok": 1
+}
+
+run get all Product again to see updated data;
+
+-------------------------------------------------------------------------------------
+ get All product 
+
+url == localhost:3000/api/product/allProduct/5ec0f2b776c81a0a80903ea4
+method == get
+
+response == {
+    "_id": "5ec0f2b776c81a0a80903ea4",
+    "name": "Omkar Thorat",
+    "email": "thoratomkar29@gmail.com",
+    "phone": "9970525069",
+    "password": "123456",
+    "products": [
+        {
+            "_id": "5ec0f8d50d3e6629bcf01bf9",
+            "name": "Soap",
+            "category": "Bathing",
+            "price": "45"
+        },
+        {
+            "_id": "5ec0f8e70d3e6629bcf01bfa",
+            "name": "Soap",
+            "category": "Bathing",
+            "price": "45"
+        }
+    ],
+    "__v": 0
+}
+
+------------------------------------------------------------------------------------
+Product Updated
+
+url == localhost:3000/api/product/updateProduct/5ec1de6a85b8301f1022b597/5ec1e06685b8301f1022b598
+method == patch
+
+body == {
+    "name": "Soap Updated",
+    "category": "Bathing",
+    "price":"45"
+}
+
+
+response == {
+    "_id": "5ec0f2b776c81a0a80903ea4",
+    "name": "Omkar Thorat",
+    "email": "thoratomkar29@gmail.com",
+    "phone": "9970525069",
+    "password": "123456",
+    "products": [
+        {
+            "_id": "5ec0fbc4d5099735f459d53f",
+            "name": "Soap Updated",
+            "category": "Bathing",
+            "price": "45"
+        },
+        {
+            "_id": "5ec0f8e70d3e6629bcf01bfa",
+            "name": "Soap",
+            "category": "Bathing",
+            "price": "45"
+        }
+    ],
+    "__v": 0
+}
+
+
+---------------------------------------------------------------------------------
+
+Delete Product
+
+url == localhost:3000/api/product/deleteProduct/5ec0f2b776c81a0a80903ea4/5ec0fbc4d5099735f459d53f
+method == delete 
+response == {
+    "_id": "5ec0f2b776c81a0a80903ea4",
+    "name": "Omkar Thorat",
+    "email": "thoratomkar29@gmail.com",
+    "phone": "9970525069",
+    "password": "123456",
+    "products": [
+        {
+            "_id": "5ec0f8e70d3e6629bcf01bfa",
+            "name": "Soap",
+            "category": "Bathing",
+            "price": "45"
+        }
+    ],
+    "__v": 0
+}
